@@ -157,7 +157,7 @@ header.masthead {
   header.masthead .post-heading,
   header.masthead .page-heading {
     padding: 100px 0 50px;
-    color: grey; }
+    color: #009999; }
     @media only screen and (min-width: 768px) {
       header.masthead .site-heading,
       header.masthead .post-heading,
