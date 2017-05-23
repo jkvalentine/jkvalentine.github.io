@@ -14,7 +14,6 @@ p {
   p a {
     text-decoration: underline; }
 
-h1,
 h2,
 h3,
 h4,
@@ -22,6 +21,11 @@ h5,
 h6 {
   font-weight: 800;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+  h1{
+  font-weight: 800;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font-color: #009999;}
 
 a {
   color: #333333;
@@ -157,7 +161,7 @@ header.masthead {
   header.masthead .post-heading,
   header.masthead .page-heading {
     padding: 100px 0 50px;
-    color: #009999; }
+    color: white; }
     @media only screen and (min-width: 768px) {
       header.masthead .site-heading,
       header.masthead .post-heading,
