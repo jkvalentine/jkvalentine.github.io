@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                     <div class="post-heading">
-                        <h1 style="text-shadow: 0px 0px 2px black;">Summer Project</h1>
+                        <h1 style="text-shadow: 0px 0px 2px black;">Considerations</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta" style="text-shadow: 0px 0px 2px black;">Posted by <a href=".about.html">Jarrod Valentine</a> on May 25, 2017</span>
                     </div>
@@ -80,15 +80,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <p>So my first week at Fandor has been pretty great. Everyone on the team is nice and super helpful. The first couple of days were a bit of an information overload, but then I started to get familiar with the database schemas and I started poking around into allllll the data the company records (a LOT of different things wow).</p>
+                    <p>The first thing I did to develop this post recommender is to come up with some KPI’s so as to have a measure of success after we put it into production. The data analyst I work with, Kim, was really helpful getting me started with Periscope and helping to setup some queries for our KPI dashboards. We came up with several metrics, the most important being average click-through rate for related posts. Hopefully we’ll see some significant lift in this section after the engine is online.</p>
 
-                    <h2 class="section-heading">Post Recommender</h2>
+                    <h2 class="section-heading">Dashboards, SQL, KPI's: Oh My!</h2>
 
-                    <p>The project I’m working on this summer turned out to be a combination of my two proposed projects, which is pretty great because I didn’t want to choose between them. I’ll be building a recommendation engine for editorial content, starting simply with a few recommended articles at the end of each editorial on the site. “Starting simply” is still pretty complicated. It turns out there’s a lot that goes into planning what sort of data you want to use, which metrics make the most sense to use and what we actually care about measuring, and how the engine will work with unfamiliar data. Lots of fun ahead!</p>
+                    <p>I’ve mentioned this before, but I didn’t fully grasp how important and useful SQL is for data analysis, storage, and retrieval until I had to use it everyday for everything I want to do. PostgreSQL is <b>so</b> convenient. Using the Postico SQL client is pretty straightforward, and I’m learning to do so many more things with SQL than I ever even knew were possible. Storing complex data in JSON format is probably my new favorite trick, since it’s almost like combining the best parts of SQL and NoSQL databases.</p>
 
-                    <p>I’m working, now, with an elasticsearch structure as a data storage system. Each post will have different entities related to it, with some possible other metadata as well, stored in json format. Today I started thinking about the storage and metadata structure that makes the most sense to relate thousands of documents together using over 50,000 unique entities (films, directors, concepts) and it is not a trivial task to plan for the data you might want to use in the future. </p>
-
-                    <p>What I wish I had more experience with right now is SQL queries. They are the backbone of the analytics at Fandor and I’m glad to be learning just how powerful they are and what sorts of questions they can answer. More SQL!</p>
+                    <p>After figuring out which KPI’s made the most sense as far as metric go, we (the data and analytics department) discussed what sorts of data we wanted to use to make recommendations. For the first iteration, we decided to use some sort of NLP technique for entity extraction to link posts by topic (sort of similar to topic modeling, but slightly different). In the future, we’d like to have the option to give more weight to posts related to sponsored content, to take into account user preferences, to have time-sensitive recommendations (like for film festivals or upcoming movies), and much, much more. For now, we start simply by relating posts according to these entities that we’ll extract using <a class="nav-link" href=" https://dandelion.eu/docs/api/datatxt/nex/v1/"> Dandelion’s Entity Extraction Api</a> to give us our similarity vectors. Let the recommending begin!</p>
                 </div>
             </div>
         </div>
