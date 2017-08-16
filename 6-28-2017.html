@@ -82,7 +82,7 @@
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                     <p>I used the <a href=" https://dandelion.eu/docs/api/datatxt/nex/v1/"> Dandelion Entity Extraction Api</a> on the text of each article and on the text accompanying each video to get ~150k entities. I then used a binarizer to encode each post (article/video) so that it can be represented as a row of zeroes and ones corresponding to the categories each entity related to the post belongs to. All the posts together made a matrix of about 6500 posts by ~150k encodings, all of which is to say that I have a large and very sparse matrix.</p>
 
-                    <h2 class="section-heading">Not Quite Big, But Not Quite Small Data</h2>
+                    <h2 class="section-heading">Not Quite Big, <br> But Not Quite Small Data</h2>
 
                     <p>I tried to do some Principal Component Analysis to look at the data in a reduced cimensional space, but a Pandas data frame of nearly 1 billion entries was too much to process. I tried using a compressed matrix format to avoid data overflow errors, but the computation was too intensive for my laptop. Rather than use the categories the entities belong to, I tried using the entities themselves which reduced the encodings to 55k. Unfortunately, PCA on this reduced matric didn't give me any important insights.</p>
 
