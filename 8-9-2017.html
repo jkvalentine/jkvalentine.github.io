@@ -68,7 +68,7 @@
                     <div class="post-heading">
                         <h1 style="text-shadow: 0px 0px 2px black;">Big Data Recommender</h1>
                         <h2 class="subheading"></h2>
-                        <span class="meta" style="text-shadow: 0px 0px 2px black;">Posted by <a href=".about.html">Jarrod Valentine</a> on August 2, 2017</span>
+                        <span class="meta" style="text-shadow: 0px 0px 2px black;">Posted by <a href=".about.html">Jarrod Valentine</a> on August 9, 2017</span>
                     </div>
                 </div>
             </div>
@@ -80,15 +80,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <p></p>
+                    <p>For this next project, I want to make a recommendation engine that will utilize a user's viewing history to make recommendations. The first idea we had was to take a list of a user's viewed movies, encode them according to Fandor's genres, and then aggregate them to get an overall user-genre vector. We then do this for all Fandor subscribers and this will give us our user-genre matrix. We compare a user's genre vector to the genre-vectors of Fandor's curated movie lists, and voilà! We have a recommender!</p>
 
-                    <h2 class="section-heading"></h2>
+                    <p>I did this using various Fandor employees' accounts as tests, and the results were not good. Of the five people I asked about their recommendation, none were happy with it. So, back to the drawing board!</p>
 
-                    <p>I</p>
+                    <h2 class="section-heading">Implicit Collaborative Filtering</h2>
 
-                    <p></p>
+                    <p>I decided instead to use an <a href="http://yifanhu.net/PUB/cf.pdf">implicit collaborative filtering method</a> that takes into account a user's preference for a genre, as well as a measure of our confidence in that score. We can then use an alternating least-squares optimization process to solve for the missing values in a user's film-genre matrix, aggregate, compare the genre-vector to the genre-vector associated with Fandor's curated movie lists and make a recommendation based on this!</p>
 
-                    <p></p>
+                    <p>This new approach, however, required much more computer memory than my laptop has available to it. I decided to build this using PySpark, the Python-friendly version of Spark's distributed computing framework. To get an MVP, I used a small cross section of users to greatly speed up the computation time. I started using PySpark about a week ago, and in the week since I haven't been able to get the collaborative filtering to work the way I want. With 2 days left for my internship, I don't know if I'll make much more progress, but I'm glad to have been exposed to using Spark in this context. I'm excited for future Spark projects, and to really dig into this cluster computing framework.</p>
                 </div>
             </div>
         </div>
